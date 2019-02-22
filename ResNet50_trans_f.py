@@ -98,7 +98,7 @@ validation_generator = test_datagen.flow_from_directory(
 
 
 #model
-base_model = ResNet50(include_top=False, weights=None, input_tensor=None, input_shape=(width,length,3), pooling=None, classes=classes)
+base_model = ResNet50(include_top=False, weights='imagenet', input_tensor=None, input_shape=(width,length,3), pooling=None, classes=classes)
 #model = Model(inputs = main_input, outputs = out)
 #model = VGG19(include_top=False, weights='imagenet', input_tensor=None, input_shape=(width,length,3), pooling=None, classes=classes)
 
