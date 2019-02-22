@@ -62,6 +62,10 @@ train_generator = train_datagen.flow_from_directory(
     class_mode='categorical')
 
 validation_generator = test_datagen.flow_from_directory(
+    test_dir,
+    target_size=(width, length),
+    batch_size=batch_size,
+    class_mode='categorical')
 
 
 #model
