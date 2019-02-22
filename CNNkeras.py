@@ -89,23 +89,3 @@ model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy
 
 history = model.fit(train_set,train_label,epochs=100,batch_size = batch_size,validation_data = (test_set,test_label),verbose = 1)
 model.save_weights('weights/weights.hdf5')
-
-import matplotlib.pyplot as plt
-
-model_id = "CNN_padding"
-fig = plt.figure()#新建一张图
-plt.plot(history.history['acc'],label='training acc')
-plt.plot(history.history['val_acc'],label='val acc')
-plt.title('model accuracy')
-plt.ylabel('accuracy')
-plt.xlabel('epoch')
-plt.legend(loc='lower right')
-fig.savefig('VGG16'+str(model_id)+'acc.png')
-fig = plt.figure()
-plt.plot(history.history['loss'],label='training loss')
-plt.plot(history.history['val_loss'], label='val loss')
-plt.title('model loss')
-plt.ylabel('loss')
-plt.xlabel('epoch')
-plt.legend(loc='upper right')
-fig.savefig('VGG16'+str(model_id)+'loss.png')
